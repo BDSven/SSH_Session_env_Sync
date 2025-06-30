@@ -6,6 +6,11 @@ I don't intend to use it over multiple linux boxes, so there will be no TCP exte
 Before using it the first time, you need to adjust the following variables in env_server.py
 - env_vars_to_export
 - SOCKET_PATH
+And the following variables in env_client.py
+- SOCKET_PATH
+Maybe I'm going to create a common variable file in the future, which will make this step easier.
+
+Make sure to use a secure path for the Socket File, ie. your home folder.
 
 The scripts are provided as is, without any warranty!
 To avoid any damage, don't use them in a productive environment.
