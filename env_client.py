@@ -11,7 +11,7 @@ SOCKET_PATH = "/tmp/env_sync.socket"
 def print_export_vars(data_vars):
     for key, value in data_vars.items():
         print (f"export {key}='{value}'")
-    print('echo "DEV Environment copied from Server!"' )
+    print('echo -e "\033[0;32m OK:\033[0m DEV Environment copied from Server!"' )
     pass
 
 if __name__ == "__main__":
@@ -24,7 +24,7 @@ if __name__ == "__main__":
             client.sendall(b'{"cmd": "getenv"}')
             data = client.recv(1024).decode()
     except Exception as error:
-        print('echo "ERROR: ENVIRONMENT SERVER IS NOT RUNNING !"' )
+        print('echo -e "\033[0;31m ERROR:\033[0m ENVIRONMENT SERVER IS NOT RUNNING !"' )
 
     if data :
         data_dict = json.loads(data)
